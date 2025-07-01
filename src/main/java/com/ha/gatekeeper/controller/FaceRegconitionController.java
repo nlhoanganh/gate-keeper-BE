@@ -1,6 +1,7 @@
 package com.ha.gatekeeper.controller;
 
 import com.ha.gatekeeper.dto.TrainFaceDTO;
+import com.ha.gatekeeper.dto.VerifyFaceDTO;
 import com.ha.gatekeeper.service.FaceRegconitionService;
 import org.bytedeco.javacpp.*;
 import org.bytedeco.javacpp.opencv_core.Mat;
@@ -56,7 +57,7 @@ public class FaceRegconitionController {
 
     @RequestMapping(value = "verify", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> verify(@RequestParam("base64") String base64) throws Exception {
+    public ResponseEntity<?> verify(@RequestBody VerifyFaceDTO verifyFaceDTO) throws Exception {
         String basePath = System.getProperty("user.dir");
         HashMap<String,String> data = new HashMap<>();
         Path path= Paths.get(basePath+"\\src\\main\\resources\\namedata.csv");
@@ -75,7 +76,7 @@ public class FaceRegconitionController {
         recognizer.setThreshold(65.0);
 
 //        byte[] bytes = file.getBytes();
-        byte[] bytes = Base64.getDecoder().decode(base64);
+        byte[] bytes = Base64.getDecoder().decode(verifyFaceDTO.getBase64Faces().get(0));
         BytePointer bytePointer = new BytePointer(bytes);
         Mat buf = new Mat(bytePointer);
         Mat grayImage = opencv_imgcodecs.imdecode(buf, opencv_imgcodecs.IMREAD_GRAYSCALE);

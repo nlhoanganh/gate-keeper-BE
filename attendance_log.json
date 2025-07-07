@@ -1,0 +1,114 @@
+[
+  {
+    "timestamp": "2025-07-04T02:28:48.720Z",
+    "filename": "capture_20250704_092848.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T02:31:06.551Z",
+    "filename": "capture_20250704_093106.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T02:31:49.546Z",
+    "filename": "capture_20250704_093149.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T02:42:39.698Z",
+    "filename": "capture_20250704_094239.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T02:45:01.214Z",
+    "filename": "capture_20250704_094501.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 98.59
+  },
+  {
+    "timestamp": "2025-07-04T02:47:08.446Z",
+    "filename": "capture_20250704_094708.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T02:47:56.425Z",
+    "filename": "capture_20250704_094756.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T02:48:35.881Z",
+    "filename": "capture_20250704_094835.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 94.7
+  },
+  {
+    "timestamp": "2025-07-04T02:49:40.473Z",
+    "filename": "capture_20250704_094940.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 76.01
+  },
+  {
+    "timestamp": "2025-07-04T02:50:26.553Z",
+    "filename": "capture_20250704_095026.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 76.89
+  },
+  {
+    "timestamp": "2025-07-04T02:51:31.225Z",
+    "filename": "capture_20250704_095131.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 88.71
+  },
+  {
+    "timestamp": "2025-07-04T03:48:08.666Z",
+    "filename": "capture_20250704_104808.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 98.62
+  },
+  {
+    "timestamp": "2025-07-04T03:49:19.669Z",
+    "filename": "capture_20250704_104919.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 96.16
+  },
+  {
+    "timestamp": "2025-07-04T08:47:15.286Z",
+    "filename": "capture_20250704_154715.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 63.21
+  },
+  {
+    "timestamp": "2025-07-04T08:59:58.788Z",
+    "filename": "capture_20250704_155958.jpg",
+    "matched": false,
+    "person": null,
+    "confidence": 0
+  },
+  {
+    "timestamp": "2025-07-04T09:00:53.373Z",
+    "filename": "capture_20250704_160053.jpg",
+    "matched": true,
+    "person": "dataset",
+    "confidence": 89.53
+  }
+]

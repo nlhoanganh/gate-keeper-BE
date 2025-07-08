@@ -4,4 +4,5 @@ class Config:
     MAIL_USERNAME = 'xifintest@gmail.com'
     MAIL_PASSWORD = 'rlsjfmivvxckucye'
     MAIL_USE_TLS = True
-    MAIL_USE_SSL = False
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root@localhost/terrathon'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False

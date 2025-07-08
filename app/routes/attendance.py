@@ -40,16 +40,25 @@ def attendance():
 @bp.route('/register', methods=['POST'])
 def register():
     data = request.json
-    id = data.get('id')
+    id = data.get('employee_id')
     name = data.get('name')
     email = data.get('email')
     role = data.get('role')
     faceImages = data.get('faceImages')
-    new_user = User(id, name, email, role)
-    new_user.face_images = faceImages
+    new_user = User(
+        employee_id=data['employee_id'],
+        name=data['name'],
+        email=data['email'],
+        role_id=data['role_id']
+        # created_at will be automatically set
+    )
+
+    # Validate required fields
+    required_fields = ['employee_id', 'name', 'email', 'role']
+    if not all(field in data for field in required_fields):
+        return jsonify({'error': 'Missing required fields'}), 400
 
     try:
-        add_user(new_user)
         status_code = 201
         response_message = "User registered successfully"
     except ValueError as e:

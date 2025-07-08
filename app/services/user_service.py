@@ -11,11 +11,10 @@ def add_user(user: User) -> None:
         if is_user_existed(user.id):
             raise ValueError(f"User '{user.id}' already exists, name: '{user.name}'")
         else:
-            try:
-                user_file.write(f"\n{user.id},{user.name},{user.email},{user.role}")
-                for index, face_image in enumerate(user.face_images, start=1):
-                    file_name = _generate_user_image_name(user) + "_" + str(index) + ".jpg"
-                    save_image(face_image, "dataset", file_name)
+            user_file.write(f"\n{user.id},{user.name},{user.email},{user.role}")
+            for index, face_image in enumerate(user.face_images, start=1):
+                file_name = _generate_user_image_name(user) + "_" + str(index) + ".jpg"
+                save_image(face_image, "dataset", file_name)
 
 def is_user_existed(employee_id: str) -> bool:
     with open(USER_DATA_FILE, newline='') as f:

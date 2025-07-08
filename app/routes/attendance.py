@@ -49,7 +49,7 @@ def register():
         employee_id=data['employee_id'],
         name=data['name'],
         email=data['email'],
-        role_id=data['role_id']
+        role_id=data['role']
         # created_at will be automatically set
     )
 

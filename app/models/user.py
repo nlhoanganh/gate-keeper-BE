@@ -1,19 +1,19 @@
 from app import db
-from datetime import datetime
+from datetime import datetime, timezone
+
 
 class User(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'user'
 
-    employee_id = db.Column(db.String(20), primary_key=True)
+    employee_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    role_id = db.Column(db.Integer, db.ForeignKey('roles.id'), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    last_login = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     is_active = db.Column(db.Boolean, default=True)
 
-    # Relationships
-    # role relationship is created via backref in Role model
+    work_logs = db.relationship('WorkLog', backref='user', lazy=True)
+
+    images = []
 
     def __repr__(self):
         return f'<User {self.employee_id} - {self.name}>'

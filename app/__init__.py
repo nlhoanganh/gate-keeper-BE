@@ -20,6 +20,10 @@ def create_app():
     mail.init_app(app)
     db.init_app(app)
 
+    from .models import User, WorkLog, WorkDate
+    with app.app_context():
+        db.create_all()
+
     from .routes.attendance import bp as attendance_bp
     app.register_blueprint(attendance_bp, url_prefix='/api')
 

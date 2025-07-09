@@ -9,7 +9,7 @@ if not os.path.exists(LOG_FILE):
     with open(LOG_FILE, 'w') as f:
         json.dump([], f)
 
-def save_image(img_base64, folder_path, file_name = "") -> (str, str):
+def save_image(img_base64: str, folder_path: str, file_name = "") -> (str, str):
     if "," in img_base64:
         img_base64 = img_base64.split(",")[1]
 

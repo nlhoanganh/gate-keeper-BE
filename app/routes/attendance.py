@@ -1,40 +1,18 @@
 from flask import Blueprint, request, jsonify, Response
 from app.models.user import User
-from app.services.face_regconition_service import recognize_face
-from app.utils.email import send_attendance_email
-from app.utils.file import save_image, write_log
-from app.services.user_service import add_user
-
+from app.services.user_service import add_user, get_user_from_base64_image
 bp = Blueprint('attendance', __name__)
 
-@bp.route('/verify-face', methods=['POST'])
-def attendance():
+@bp.route('/login', methods=['POST'])
+def login():
+
     data = request.json
-    timestamp = data.get('timestamp')
     img_base64 = data.get('image')
 
-    filename, filepath = save_image(img_base64, "uploads")
-    matched, person, confidence = recognize_face(filepath)
-
-    log_entry = {
-        "timestamp": timestamp,
-        "filename": filename,
-        "matched": matched,
-        "person": person,
-        "confidence": confidence
-    }
-    write_log(log_entry)
-
-    if matched and person:
-        email_status = send_attendance_email(person, timestamp, confidence)
-    else:
-        email_status = "Skipped"
+    verified_user = get_user_from_base64_image(img_base64)
 
     return jsonify({
-        "matched": matched,
-        "person": person,
-        "confidence": confidence,
-        "email_status": email_status
+        "person": verified_user.to_dict() if verified_user is not None else None,
     })
 
 @bp.route('/register', methods=['POST'])

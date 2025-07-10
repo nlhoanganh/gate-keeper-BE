@@ -6,3 +6,5 @@ class Config:
     MAIL_USE_TLS = True
     SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root@localhost/terrathon'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    TERRALOG_MIN_LAT = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False

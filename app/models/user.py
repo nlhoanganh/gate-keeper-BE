@@ -17,3 +17,10 @@ class User(db.Model):
 
     def __repr__(self):
         return f'<User {self.employee_id} - {self.name}>'
+
+    def to_dict(self):
+        return {
+            'employee_id': self.employee_id,
+            'name': self.name,
+            'email': self.email
+        }
